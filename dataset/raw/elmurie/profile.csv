@@ -1,0 +1,2 @@
+avatar,player_id,@id,url,username,followers,country,last_online,joined,status,is_streamer,verified,league,streaming_platforms
+https://images.chesscomfiles.com/uploads/v1/user/96016480.c6154ffd.200x200o.66624a380dfb.jpeg,96016480,https://api.chess.com/pub/player/elmurie,https://www.chess.com/member/elmurie,elmurie,30,https://api.chess.com/pub/country/IT,1778150484,1605008407,basic,False,False,Legend,[]
