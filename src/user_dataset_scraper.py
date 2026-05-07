@@ -109,14 +109,6 @@ for archive in archives:
             "result_white": game.get("white", {}).get("result"),
             "result_black": game.get("black", {}).get("result"),
 
-            "white_accuracy": game.get(
-                "accuracies", {}
-            ).get("white"),
-
-            "black_accuracy": game.get(
-                "accuracies", {}
-            ).get("black"),
-
             "eco": game.get("eco"),
 
             "pgn": game.get("pgn")
