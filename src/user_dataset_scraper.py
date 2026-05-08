@@ -3,7 +3,8 @@ import pandas as pd
 from pathlib import Path
 from datetime import datetime
 
-username = input("insert chess.com username: ").strip().lower()
+
+from src.config import USERNAME
 
 headers = {
     "User-Agent": "chess-data-analysis-script/1.0"
@@ -12,11 +13,11 @@ headers = {
 # src/ -> chess-analytics/
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
-# dataset/raw/{username}/
-dataset_dir = PROJECT_ROOT / "dataset" / "raw" / username
+# dataset/raw/{USERNAME}/
+dataset_dir = PROJECT_ROOT / "dataset" / "raw" / USERNAME
 dataset_dir.mkdir(parents=True, exist_ok=True)
 
-base_url = f"https://api.chess.com/pub/player/{username}"
+base_url = f"https://api.chess.com/pub/player/{USERNAME}"
 
 
 def get_json(url):
@@ -100,8 +101,8 @@ for archive in archives:
             "rated": game.get("rated"),
             "rules": game.get("rules"),
 
-            "white": game.get("white", {}).get("username"),
-            "black": game.get("black", {}).get("username"),
+            "white": game.get("white", {}).get("USERNAME"),
+            "black": game.get("black", {}).get("USERNAME"),
 
             "white_rating": game.get("white", {}).get("rating"),
             "black_rating": game.get("black", {}).get("rating"),
